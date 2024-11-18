@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Atividade 5 - Testando o JavaScript</title>
+    <script>
+        // 1. Função simples de alerta
+        function mostrarAlerta() {
+            alert("Olá! Este é um alerta simples.");
+        }
+
+        // 2. Função com um argumento
+        function mostrarMensagem(mensagem) {
+            alert("Mensagem: " + mensagem);
+        }
+
+        // 3. Função com dois argumentos
+        function somarNumeros(a, b) {
+            alert("A soma de " + a + " e " + b + " é: " + (a + b));
+        }
+
+        // 4. Função que escreve no corpo da página
+        function escreverNaPagina(texto) {
+            const paragrafo = document.createElement("p");
+            paragrafo.textContent = texto;
+            document.body.appendChild(paragrafo);
+        }
+    </script>
+</head>
+<body>
+    <h1>Atividade 5 - Testando o JavaScript</h1>
+
+    <!-- Passo 1: Testando um alerta simples -->
+    <h2> Função de alerta</h2>
+    <button onclick="mostrarAlerta()">Mostrar Alerta</button>
+</body>
+</html>
