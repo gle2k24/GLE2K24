@@ -1,0 +1,79 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Atividade de JavaScript</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            margin: 20px;
+        }
+        .container {
+            margin-bottom: 20px;
+            padding: 10px;
+            border: 1px solid #ccc;
+            border-radius: 5px;
+        }
+        .output {
+            margin-top: 10px;
+            padding: 10px;
+            background-color: #f9f9f9;
+            border: 1px solid #ddd;
+            border-radius: 5px;
+            white-space: pre-line;
+        }
+    </style>
+</head>
+<body>
+    <h1>Atividade de JavaScript</h1>
+    <div class="container">
+        <h2>Exercício 1: Raiz Quadrada</h2>
+        <button onclick="calcularRaiz()">Calcular Raízes</button>
+        <div class="output" id="resultadoRaiz"></div>
+    </div>
+
+    <div class="container">
+        <h2>Exercício 2: Texto Dinâmico</h2>
+        <input type="text" id="textoUsuario" placeholder="Digite algo" />
+        <button onclick="mostrarTexto()">Mostrar Texto</button>
+        <div class="output" id="resultadoTexto"></div>
+    </div>
+
+    <div class="container">
+        <h2>Desafio: Contar até N</h2>
+        <button onclick="contarAteN()">Iniciar Contagem</button>
+        <div class="output" id="resultadoContagem"></div>
+    </div>
+
+    <script>
+        // Exercício 1: Calcular Raiz Quadrada
+        function calcularRaiz() {
+            const numeros = [25, 36, 49];
+            const resultados = numeros.map(num => Raiz de ${num}: ${Math.sqrt(num)});
+            document.getElementById('resultadoRaiz').innerHTML = resultados.join('<br>');
+        }
+
+        // Exercício 2: Texto Dinâmico
+        function mostrarTexto() {
+            const texto = document.getElementById('textoUsuario').value.trim();
+            if (texto === "") {
+                alert("Por favor, insira algum texto.");
+                return;
+            }
+            document.getElementById('resultadoTexto').innerText = Você digitou: ${texto};
+        }
+
+        // Desafio: Contar até N
+        function contarAteN() {
+            const n = parseInt(prompt("Digite um número N:"));
+            if (isNaN(n) || n <= 0) {
+                alert("Por favor, insira um número válido.");
+                return;
+            }
+            const numeros = Array.from({ length: n }, (_, i) => i + 1).join(", ");
+            document.getElementById('resultadoContagem').innerText = numeros;
+        }
+    </script>
+</body>
+</html>
