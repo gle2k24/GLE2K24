@@ -1,59 +1,64 @@
 <!DOCTYPE html>
-<html lang="pt">
 <head>
-    <meta charset="UTF-8">
-    <title>Manipulação de Arrays</title>
+    
     <script>
-        let frutas = ["Maçã", "Banana", "Laranja", "Melancia", "Manga"];
+         let linguagens = Array();
 
-        function exibirArray() {
-            let div = document.getElementById("resultado");
-            div.innerHTML = frutas.join(", ");
-        }
+         linguagens [0]='Dart';
+         linguagens [1]='PHP';
+         linguagens [2]='Java'; 
+         linguagens[3]='Pyton'; 
+         linguagens [4]='Perl'; 
+         linguagens [5]='Ruby on Rails'; 
+         linguagens [6]='C++'; 
 
-        function exibirElemento() {
-            let posicao = parseInt(prompt("Digite a posição do elemento (0 a " + (frutas.length - 1) + "):"));
-            if (posicao >= 0 && posicao < frutas.length) {
-            } else {
-                alert("Posição inválida!");
-            }
+        function mostrarListaliguagens(){
+            const container = document.getElementById('minhaDiv'); 
+                for (var i=0; i < linguagens.length; i++){
+                    var tag = '<h5>' + i + '-'+linguagens [i] + '</h5>'; 
+                    container.innerHTML += tag; 
+                } 
         }
+                function posicaolinguagens(){
+                    var indice = prompt('Qual posição da lista deseja consultar?');
+                    alert(linguagens [indice]); 
+        } 
+        </script>
+        <script>
+            let frutas = Array();
 
-        function adicionarFruta() {
-            let novaFruta = prompt("Digite o nome da nova fruta:");
-            if (novaFruta) {
-                frutas.push(novaFruta)
-                exibirArray();
-            } else {
-                alert("Nenhuma fruta foi adicionada.");
-            }
-        }
+         frutas [0]='Maçã';
+         frutas [1]='Banana';
+         frutas [2]='Manga'; 
+         frutas[3]='Pitaya'; 
+         frutas [4]='Pêra'; 
+         frutas [5]='Pitomba'; 
+         frutas [6]='Acerola'; 
 
-        function removerFruta() {
-            if (frutas.length > 0) {
-                let frutaRemovida = frutas.pop();
-                exibirArray();
-            } else {
-                alert("O array está vazio, nenhuma fruta para remover.");
-            }
+        function mostrarListafrutas(){
+            const container = document.getElementById('myDiv'); 
+                for (var i=0; i < frutas.length; i++){
+                    var tag = '<h5>' + i + '-'+frutas [i] + '</h5>'; 
+                    container.innerHTML += tag; 
+                } 
         }
-
-        function limparArray() {
-            frutas = [];
-            alert("O array foi limpo!");
-            exibirArray();
-        }
-    </script>
+                function posicaofrutas(){
+                    var indice = prompt('Qual posição da lista deseja consultar?');
+                    alert(frutas [indice]); 
+        } 
+        </script>
 </head>
 <body>
-    <h1>Manipulação de Arrays</h1>
-    <button onclick="exibirArray()">Exibir Array</button>
-    <button onclick="exibirElemento()">Exibir Elemento</button>
-    <button onclick="adicionarFruta()">Adicionar Fruta</button>
-    <button onclick="removerFruta()">Remover Última Fruta</button>
-    <button onclick="limparArray()">Limpar Array</button>
-    <div id="resultado" style="margin-top: 20px; font-size: 18px; font-weight: bold;">
-
-    </div>
+    <h1>Array de linguagens!</h1> 
+    <button onclick="mostrarListaliguagens()">Criar Array</button> <br><br> 
+    <button onclick="posicaolinguagens()">Posição no Array</button> 
+    <div id="minhaDiv"></div>
 </body>
-</html>
+<br>
+
+<body>
+    <h1>Array de frutas!</h1> 
+    <button onclick="mostrarListafrutas()">Criar Array</button> <br><br> 
+    <button onclick="posicaofrutas()">Posição no Array</button> 
+    <div id="myDiv"></div>
+</body>
