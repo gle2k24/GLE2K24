@@ -1,0 +1,59 @@
+<!DOCTYPE html>
+<html lang="pt">
+<head>
+    <meta charset="UTF-8">
+    <title>Manipulação de Arrays</title>
+    <script>
+        let frutas = ["Maçã", "Banana", "Laranja", "Melancia", "Manga"];
+
+        function exibirArray() {
+            let div = document.getElementById("resultado");
+            div.innerHTML = frutas.join(", ");
+        }
+
+        function exibirElemento() {
+            let posicao = parseInt(prompt("Digite a posição do elemento (0 a " + (frutas.length - 1) + "):"));
+            if (posicao >= 0 && posicao < frutas.length) {
+            } else {
+                alert("Posição inválida!");
+            }
+        }
+
+        function adicionarFruta() {
+            let novaFruta = prompt("Digite o nome da nova fruta:");
+            if (novaFruta) {
+                frutas.push(novaFruta)
+                exibirArray();
+            } else {
+                alert("Nenhuma fruta foi adicionada.");
+            }
+        }
+
+        function removerFruta() {
+            if (frutas.length > 0) {
+                let frutaRemovida = frutas.pop();
+                exibirArray();
+            } else {
+                alert("O array está vazio, nenhuma fruta para remover.");
+            }
+        }
+
+        function limparArray() {
+            frutas = [];
+            alert("O array foi limpo!");
+            exibirArray();
+        }
+    </script>
+</head>
+<body>
+    <h1>Manipulação de Arrays</h1>
+    <button onclick="exibirArray()">Exibir Array</button>
+    <button onclick="exibirElemento()">Exibir Elemento</button>
+    <button onclick="adicionarFruta()">Adicionar Fruta</button>
+    <button onclick="removerFruta()">Remover Última Fruta</button>
+    <button onclick="limparArray()">Limpar Array</button>
+    <div id="resultado" style="margin-top: 20px; font-size: 18px; font-weight: bold;">
+
+    </div>
+</body>
+</html>
