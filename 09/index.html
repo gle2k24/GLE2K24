@@ -1,0 +1,52 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Gerenciando Pilha de Pessoas</title>
+</head>
+<body>
+    <h1>Gerenciando uma Pilha de Pessoas</h1>
+    <p>Use os botões abaixo para adicionar ou remover pessoas na pilha.</p>
+
+    <input type="text" id="nome" placeholder="Digite o nome">
+    <button onclick="adicionarPessoa()">Adicionar Pessoa</button>
+    <button onclick="removerPessoa()">Remover Pessoa</button>
+
+    <h2>Pilha Atual:</h2>
+    <ul id="listaPilha"></ul>
+
+    <script>
+        let pilhaPessoas = [];
+        function adicionarPessoa() {
+            const nome = document.getElementById('nome').value;
+            if (nome) {
+                pilhaPessoas.push(nome);
+                atualizarLista();
+                document.getElementById('nome').value = '';
+            } else {
+                alert('Por favor, digite um nome.');
+            }
+        }
+a
+        function removerPessoa() {
+            if (pilhaPessoas.length > 0) {
+                const pessoaRemovida = pilhaPessoas.pop();
+                atualizarLista();
+            } else {
+                alert('A pilha está vazia!');
+            }
+        }
+        
+        function atualizarLista() {
+            const lista = document.getElementById('listaPilha');
+            lista.innerHTML = '';
+            pilhaPessoas.forEach((pessoa) => {
+                const li = document.createElement('li');
+                li.textContent = pessoa;
+                lista.appendChild(li);
+            });
+        }
+    </script>
+</body>
+</html>
